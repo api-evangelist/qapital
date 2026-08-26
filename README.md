@@ -64,5 +64,46 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Qapital is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Qapital is a consumer personal-finance company founded in 2013 — "born in Stockholm, raised in New
+York City" — that packages saving, spending, investing and budgeting into a single mobile membership
+app built on behavioral-economics research. Its Rules engine automates transfers into user-defined
+Goals, a Dream Team feature lets two people save collaboratively, Qapital Invest offers risk-weighted
+portfolios through SEC-registered advisory and brokerage partners, and a Qapital Visa debit card and
+Spending account run on FDIC-member partner banking. Qapital reports 3.5m+ app downloads and roughly
+$3B collectively saved by members.
+
+## API surface
+
+**Qapital publishes no public API.** As of 2026-08-26 there is no developer portal, no API
+reference, no OpenAPI / AsyncAPI / GraphQL contract, no SDK, no CLI, no MCP server and no A2A agent
+card. `developer.qapital.com` and `docs.qapital.com` do not resolve; `api.qapital.com` resolves to an
+AWS load balancer but answers every anonymous request with `503 Service Unavailable` because it is
+the private backend for the mobile apps. Every `/.well-known/` path on `www.qapital.com` returns 404.
+
+The only public programmable surface is the [Qapital service on IFTTT](https://ifttt.com/qapital) —
+four polling triggers, three Pro+ queries and one action — captured in
+[`integrations/qapital-ifttt.yml`](integrations/qapital-ifttt.yml).
+
+## What is in this profile
+
+| Artifact | File |
+|---|---|
+| Membership plans and pricing | [`plans/qapital-plans-pricing.yml`](plans/qapital-plans-pricing.yml) |
+| Rate limits (measured zero) | [`rate-limits/qapital-rate-limits.yml`](rate-limits/qapital-rate-limits.yml) |
+| `/.well-known/` probe (all 404 / 503) | [`well-known/qapital-well-known.yml`](well-known/qapital-well-known.yml) |
+| Trust center — SOC 2 Type I, FDIC, SEC/FINRA partners | [`security/qapital-trust-center.yml`](security/qapital-trust-center.yml) |
+| Domain security probe | [`security/qapital-domain-security.yml`](security/qapital-domain-security.yml) |
+| Conformance | [`conformance/qapital-conformance.yml`](conformance/qapital-conformance.yml) |
+| IFTTT integration surface | [`integrations/qapital-ifttt.yml`](integrations/qapital-ifttt.yml) |
+| llms.txt | [`llms/qapital-llms.txt`](llms/qapital-llms.txt) |
+
+## Links
+
+- Website — https://www.qapital.com/
+- Pricing — https://www.qapital.com/pricing/
+- Security — https://www.qapital.com/security/
+- Help Center — https://help.qapital.com/en/
+- Blog — https://www.qapital.com/blog/
+- GitHub — https://github.com/qapital
+- Terms — https://www.qapital.com/terms/
+- Privacy — https://www.qapital.com/terms/privacy-policy/

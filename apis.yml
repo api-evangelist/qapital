@@ -1,17 +1,36 @@
 aid: qapital
 name: Qapital
-description: 'Qapital is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Qapital is a consumer personal-finance company founded in 2013 — "born in Stockholm, raised in New
+  York City" — that packages saving, spending, investing and budgeting into a single mobile membership
+  app built on behavioral-economics research. Its Rules engine automates transfers into user-defined
+  Goals (round-ups, guilty pleasure, payday divvy, freelancer tax set-aside and activity-triggered
+  saves), a Dream Team feature lets two people save collaboratively, Qapital Invest offers
+  risk-weighted portfolios through SEC-registered advisory and brokerage partners, and a Qapital Visa
+  debit card and Spending account run on FDIC-member partner banking. The company reports 3.5m+ app
+  downloads and roughly $3B collectively saved by members. Qapital sells a subscription — Basic,
+  Complete and Premier tiers — rather than a developer product: it publishes no developer portal, no
+  API reference and no machine-readable contract of any kind. The only public automation surface it
+  offers is a Qapital service on IFTTT (four triggers, three queries, one action), and its own
+  api.qapital.com host answers anonymous requests with HTTP 503.
 url: https://raw.githubusercontent.com/api-evangelist/qapital/refs/heads/main/apis.yml
+image: https://www.qapital.com/images/qapital_share.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Personal Finance
+- Savings
+- Banking
+- Investing
+- Budgeting
+- Fintech
+- Consumer Applications
+- Behavioral Economics
+- Mobile Banking
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,60 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.qapital.com/
+- type: Blog
+  url: https://www.qapital.com/blog/
+- type: Support
+  url: https://help.qapital.com/en/
+- type: GitHubOrganization
+  url: https://github.com/qapital
+- type: Pricing
+  url: https://www.qapital.com/pricing/
+- type: SignUp
+  url: https://www.qapital.com/download/
+- type: TermsOfService
+  url: https://www.qapital.com/terms/
+- type: PrivacyPolicy
+  url: https://www.qapital.com/terms/privacy-policy/
+- type: Compliance
+  url: https://www.qapital.com/security/
+- type: Plans
+  url: plans/qapital-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/qapital-rate-limits.yml
+- type: TrustCenter
+  url: security/qapital-trust-center.yml
+- type: DomainSecurity
+  url: security/qapital-domain-security.yml
+- type: Integrations
+  url: integrations/qapital-ifttt.yml
+- type: LLMsTxt
+  url: llms/qapital-llms.txt
+- type: Conformance
+  url: conformance/qapital-conformance.yml
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Qapital ships only an end-user mobile membership app: developer.qapital.com and docs.qapital.com
+    do not resolve at all, its sitemap lists no developer, docs or API page, and its own
+    api.qapital.com host answers every anonymous request — /openapi.json, /swagger.json, /graphql,
+    /docs and every /.well-known/ path — with HTTP 503 Service Unavailable, because it is the
+    private backend for the iOS and Android apps rather than a published product.
+  evidence:
+  - url: https://api.qapital.com/openapi.json
+    status: 503
+  - url: https://www.qapital.com/openapi.json
+    status: 404
+  - url: https://developer.qapital.com/
+    status: 0
+  - url: https://www.qapital.com/.well-known/agent-card.json
+    status: 404
+  - url: https://ifttt.com/qapital
+    status: 200
+  checked: '2026-08-26'

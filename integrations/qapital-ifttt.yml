@@ -1,0 +1,59 @@
+generated: '2026-08-26'
+method: searched
+source: https://ifttt.com/qapital
+name: Qapital on IFTTT
+platform: IFTTT
+url: https://ifttt.com/qapital
+http_status: 200
+note: >-
+  This is the ONLY public programmable surface Qapital exposes, and it is hosted by IFTTT rather
+  than by Qapital. It is a marketplace-style integration, not an API: there is no published base
+  URL, no schema, no auth documentation and no rate limits on Qapital's side — an end user connects
+  their Qapital account to IFTTT through an OAuth-style consent flow and composes applets in
+  IFTTT's UI. Captured because it is real, first-party (Qapital publishes and maintains the
+  service — see https://www.qapital.com/blog/ifttt-rules-are-supercharging-your-savings/ and the
+  company's own /blog/category/ifttt/ section), and because it is the closest thing to an event
+  surface Qapital has. Names and descriptions are quoted verbatim from the IFTTT service page; no
+  input/output field schemas are published there, so none are recorded here.
+service_description: >-
+  "Qapital is the everyday banking app that helps you conquer your bucket list with smarter spending
+  and automatic savings."
+auth:
+  model: end-user account connect (OAuth-style consent inside IFTTT)
+  documented_by_provider: false
+triggers:
+- name: Create or join a new goal
+  kind: polling
+  description: >-
+    This Trigger fires every time you either create a new goal or accept an invitation to join a
+    friend's goal.
+- name: Every time you save
+  kind: polling
+  description: This Trigger fires every time you save toward one of your goals.
+- name: Every time you save using a specific method
+  kind: polling
+  description: >-
+    This Trigger fires every time you save using a specific method like round-up or
+    guilty-pleasure.
+- name: Every time you save toward a specific goal
+  kind: polling
+  description: This Trigger fires every time you save toward one specific goal.
+queries:
+- name: History of every time you saved
+  tier: IFTTT Pro+
+  description: The query returns a list of instances when you saved towards one of your goals.
+- name: History of saves using a specific method
+  tier: IFTTT Pro+
+  description: Returns a list of saves made by a specific method such as round-up or guilty-pleasure.
+- name: History of goals created or joined
+  tier: IFTTT Pro+
+  description: >-
+    This query returns a list of every time you either create a new goal or accept an invitation to
+    join a friend's goal.
+actions:
+- name: Save toward a goal
+  description: This Action will transfer money toward one of your goals.
+counts:
+  triggers: 4
+  queries: 3
+  actions: 1

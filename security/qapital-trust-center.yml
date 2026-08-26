@@ -1,0 +1,45 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.qapital.com/security/
+name: Qapital Security
+url: https://www.qapital.com/security/
+note: >-
+  Qapital does not run a branded trust portal (no trust.qapital.com, no Vanta/Drata/SafeBase
+  surface). Its published security posture lives on a single first-party page, /security/, which
+  states an independently examined SOC 2 Type I, encryption practice, and the regulated partners
+  behind the money movement. Captured verbatim from that page.
+certifications:
+- name: SOC 2 Type I
+  status: completed
+  statement: >-
+    "We have successfully completed an independent SOC 2 Type I examination." Independently audited
+    security controls.
+  evidence: https://www.qapital.com/security/
+  report_available: false
+  report_note: No portal or NDA request flow is published for obtaining the report.
+regulatory_partners:
+- name: Lincoln Savings Bank
+  role: Member-FDIC partner bank providing Qapital Save and Spend accounts and issuing the Qapital
+    Visa debit card
+  insurance: FDIC insured up to $250,000
+- name: Qapital Invest, LLC
+  role: SEC-registered investment advisor providing advisory services
+- name: Apex Clearing Corporation
+  role: SEC-registered broker-dealer, member FINRA/SIPC
+- name: Wedbush Securities Inc.
+  role: SEC-registered broker-dealer, member FINRA/SIPC
+controls:
+  encryption_in_transit: All connections to Qapital are encrypted using TLS 1.2 or higher
+  encryption_at_rest: AES-256
+  customer_authentication: Passcode access, fingerprint ID, remote lock
+  internal_access: All Qapital team members use multi-factor authentication and least-privilege
+    access to internal systems
+  account_ownership_verification: Transfers are never executed before account ownership is established
+  testing: Regular vulnerability scanning and third-party penetration testing of applications
+security_contact:
+  email: support@qapital.com
+  note: >-
+    The /security/ page directs security questions to general support. There is no dedicated
+    security@ address, no /.well-known/security.txt (probed 404), no published coordinated
+    disclosure policy and no bug-bounty program (HackerOne / Bugcrowd / Intigriti all searched, no
+    Qapital program found) — so no VulnerabilityDisclosure or Security pointer is emitted.

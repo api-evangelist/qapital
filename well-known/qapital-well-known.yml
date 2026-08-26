@@ -1,0 +1,44 @@
+generated: '2026-08-26'
+method: probed
+source: live HTTP probes of qapital.com hosts
+note: >-
+  Every /.well-known/ path probed on www.qapital.com returned HTTP 404 with the site's Next.js
+  HTML 404 shell (56,716 bytes, content-type text/html) — no document is served at any of them.
+  api.qapital.com answered 503 Service Unavailable to every path including /.well-known/*, so it
+  could not be evaluated. No WellKnown or SecurityTxt pointer is emitted in apis.yml: this file
+  records a measured absence, not a presence.
+hosts:
+- host: www.qapital.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.qapital.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 503
+    file: null

@@ -1,0 +1,66 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.qapital.com/pricing/
+name: Qapital membership plans
+note: >-
+  Qapital sells a consumer subscription, not an API product. These are end-user membership tiers —
+  there is no developer plan, no free API tier, and no usage-metered pricing, because Qapital
+  publishes no public API. Monthly prices are rendered server-side and captured verbatim below;
+  the page also offers an "Annual" billing toggle at a discounted rate, but the annual figures are
+  only produced client-side and were not present in the served HTML, so they are recorded as null
+  rather than guessed.
+currency: USD
+billing_periods:
+- monthly
+- annual
+trial:
+  length_days: 30
+  note: >-
+    "Start your 30-day free trial today." Qapital deducts the monthly membership fee after the free
+    trial ends and a bank account is connected.
+plan_count: 3
+plans:
+- name: Basic
+  price: 3
+  currency: USD
+  period: monthly
+  annual_price: null
+  tagline: Set-and-forget saving. Solo or with a partner.
+  included:
+  - Unlimited personalized savings Goals
+  - Automated saving via customizable Rules triggers
+  - Transfers between Goals
+  - Payday saving (save a portion of a paycheck on deposit)
+  - Shared Goals with a partner and shared-spend tracking
+  - FDIC-insured partner bank accounts
+  - Multi-factor ID verification, SSL/TLS encryption
+- name: Complete
+  price: 8
+  currency: USD
+  period: monthly
+  annual_price: null
+  tagline: Step up your game with spending and investing.
+  included:
+  - Everything in Basic
+  - Qapital Invest ready-made, risk-weighted, auto-rebalanced Portfolios
+  - Qapital Visa debit card with real-time spend tracking and 55,000+ ATM access
+  - Instant digital card
+  - Ask Qapital personalized insights
+  - VIP customer support (faster live-agent access on the Annual plan)
+- name: Premier
+  price: 12
+  currency: USD
+  period: monthly
+  annual_price: null
+  tagline: Manage money like a pro without all the effort.
+  included:
+  - Everything in Basic and Complete
+  - Premier Invest Portfolios (expanded portfolio set tailored to specific goals)
+disclosures:
+  banking: >-
+    Qapital is a fintech company, not an FDIC-insured bank. Checking account and debit card provided
+    by Lincoln Savings Bank, Member FDIC.
+  advisory: Advisory services provided by Qapital Invest, LLC, an SEC-registered investment advisor.
+  brokerage: >-
+    Brokerage services provided by Apex Clearing Corporation or Wedbush Securities Inc., each an
+    SEC-registered broker-dealer and member FINRA/SIPC.

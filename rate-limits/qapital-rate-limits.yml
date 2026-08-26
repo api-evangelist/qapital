@@ -1,0 +1,19 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.qapital.com/pricing/
+limit_count: 0
+note: >-
+  Qapital publishes no public API and therefore no rate limits. No developer portal, API reference,
+  or terms-of-use section documents request quotas, throttling windows, burst allowances, or
+  RateLimit-* / Retry-After response headers. The only public automation surface, the Qapital
+  service on IFTTT (see integrations/qapital-ifttt.yml), is rate-shaped by IFTTT's own polling
+  cadence rather than by any Qapital-published limit. Qapital's own API host, api.qapital.com,
+  answered every anonymous probe with HTTP 503 Service Unavailable, so no live rate-limit headers
+  could be observed either. This is an honest zero, not an unchecked field.
+probes:
+- url: https://api.qapital.com/
+  status: 503
+- url: https://www.qapital.com/pricing/
+  status: 200
+limits: []
+headers: []

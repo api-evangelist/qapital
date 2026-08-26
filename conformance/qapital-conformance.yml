@@ -1,0 +1,90 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.qapital.com/security/ + https://www.qapital.com/pricing/
+note: >-
+  Qapital publishes no machine-readable contract, so every API/interface standard below is asserted
+  false on evidence of absence rather than on a spec reading. The conformance that IS real for this
+  company is regulatory and audit-based, and it is recorded first. Domain-standard conformance
+  (FDX, Open Banking / PSD2, ISO 20022, FAPI) is NOT claimed: Qapital is the consumer end of retail
+  banking and does not publish a data-sharing contract of its own — third-party access to Qapital
+  account data runs through aggregators, not through a Qapital-published standard implementation.
+standards:
+- id: soc2-type-i
+  name: SOC 2 Type I
+  conforms: true
+  evidence: >-
+    "We have successfully completed an independent SOC 2 Type I examination." —
+    https://www.qapital.com/security/
+- id: fdic-insurance
+  name: FDIC deposit insurance (via member bank)
+  conforms: true
+  evidence: >-
+    Funds held in member-FDIC partner banks insured up to $250,000; accounts provided by Lincoln
+    Savings Bank, Member FDIC — https://www.qapital.com/security/
+- id: sec-registered-advisor
+  name: SEC-registered investment advisor
+  conforms: true
+  evidence: Qapital Invest, LLC is an SEC-registered investment advisor —
+    https://www.qapital.com/pricing/
+- id: finra-sipc
+  name: FINRA / SIPC member brokerage
+  conforms: true
+  evidence: Brokerage provided by Apex Clearing Corporation or Wedbush Securities Inc., each an
+    SEC-registered broker-dealer and member FINRA/SIPC — https://www.qapital.com/pricing/
+- id: tls12-plus
+  name: TLS 1.2 or higher in transit
+  conforms: true
+  evidence: >-
+    Stated on https://www.qapital.com/security/ and confirmed by probe — www.qapital.com negotiates
+    TLSv1.3 with HSTS max-age 63072000 (security/qapital-domain-security.yml)
+- id: dnssec
+  name: DNSSEC signed zone
+  conforms: true
+  evidence: probed 2026-08-26, qapital.com zone is DNSSEC-signed with CAA records for digicert.com,
+    letsencrypt.org and amazon.com (security/qapital-domain-security.yml)
+- id: dmarc-reject
+  name: DMARC enforcement
+  conforms: true
+  evidence: probed 2026-08-26, qapital.com publishes SPF and a DMARC policy of p=reject
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: >-
+    No OpenAPI at any probed location — www.qapital.com/openapi.json 404 (HTML shell),
+    api.qapital.com/openapi.json, /swagger.json, /v1/openapi.json, /docs, /api-docs all 503;
+    developer.qapital.com and docs.qapital.com do not resolve.
+- id: graphql
+  name: GraphQL
+  conforms: false
+  evidence: api.qapital.com/graphql returned 503; no GraphQL surface documented anywhere on the site.
+- id: asyncapi
+  name: AsyncAPI
+  conforms: false
+  evidence: No event, streaming or webhook specification is published. The only event-shaped surface
+    is IFTTT polling triggers (integrations/qapital-ifttt.yml).
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: >-
+    No published authorization server. /.well-known/oauth-authorization-server and
+    /.well-known/openid-configuration both 404 on www.qapital.com. Qapital's IFTTT service uses an
+    OAuth connect flow, but the endpoints, scopes and client registration are not published by
+    Qapital.
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: No error contract is published; no spec to read.
+- id: rfc9116
+  name: RFC 9116 security.txt
+  conforms: false
+  evidence: https://www.qapital.com/.well-known/security.txt returned 404.
+- id: fdx
+  name: FDX (Financial Data Exchange)
+  conforms: false
+  evidence: No FDX endpoint, certification claim or data-sharing contract published by Qapital.
+domain_standard:
+  claimed: false
+  note: >-
+    Reward-only check. Qapital's market (US retail savings/banking) has FDX and Open Banking style
+    standards, but Qapital publishes no contract at all, so there is nothing in which a domain
+    standard could be declared. No conformance is invented to fill the slot.

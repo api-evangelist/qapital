@@ -1,0 +1,61 @@
+# Qapital
+
+> Qapital is a consumer personal-finance company founded in 2013, "born in Stockholm, raised in
+> New York City". It sells a mobile membership app that combines automated saving (Goals + Rules),
+> collaborative saving (Dream Team), budgeting, investing through SEC-registered advisory and
+> brokerage partners, and a Qapital Visa debit card on FDIC-member partner banking. Qapital reports
+> 3.5m+ downloads and about $3B collectively saved by members.
+
+## Agent-relevant summary
+
+Qapital has NO public API. As of 2026-08-26 there is no developer portal, no API reference, no
+OpenAPI/AsyncAPI/GraphQL contract, no SDK, no CLI, no MCP server, no A2A agent card, and no
+/.well-known/ document of any kind. `developer.qapital.com` and `docs.qapital.com` do not resolve.
+`api.qapital.com` resolves to an AWS ELB but answers every anonymous request — including
+/openapi.json, /swagger.json, /docs, /graphql and /.well-known/* — with HTTP 503 Service
+Unavailable; it is the private backend for the mobile apps, not a published product.
+
+The only public programmable surface is a Qapital service on IFTTT with four polling triggers,
+three Pro+ queries and one action. Third-party read access to Qapital account data is generally
+obtained through open-banking aggregators rather than from Qapital directly.
+
+## Company
+
+- [Website](https://www.qapital.com/): Product marketing and the app download path.
+- [About Qapital](https://www.qapital.com/about-us/): Founding (2013), mission, product lineup, 3.5m+ downloads, $3B saved.
+- [Press](https://www.qapital.com/about-us/press/): Press coverage and contacts.
+- [Blog](https://www.qapital.com/blog/): Product announcements, behavioral-economics writing, IFTTT posts.
+- [GitHub organization](https://github.com/qapital): 51 public repositories — forks of third-party iOS/Android libraries, Terraform AWS modules, and hiring test tasks. No first-party SDK or API specification is published here.
+
+## Product
+
+- [Save](https://www.qapital.com/saving/): Goals and the Rules automation engine (round-up, guilty pleasure, payday divvy, freelancer tax set-aside, activity triggers).
+- [Invest](https://www.qapital.com/invest/): Risk-weighted, auto-rebalanced portfolios via Qapital Invest, LLC.
+- [Budget](https://www.qapital.com/budget/): Payday budgeting and weekly spending targets.
+- [Dream Team](https://www.qapital.com/dream-team/): Two-person collaborative saving and shared spend tracking.
+- [Qapital Visa Debit Card](https://www.qapital.com/qapital-visa-debit-card/): Spending account and card issued by Lincoln Savings Bank, Member FDIC.
+
+## Commercial
+
+- [Pricing](https://www.qapital.com/pricing/): Basic $3/mo, Complete $8/mo, Premier $12/mo, 30-day free trial, annual billing at a discount. Consumer subscription only — there is no developer or API plan.
+- [Get the app](https://www.qapital.com/download/): App Store and Google Play links; the sign-up path.
+- [Terms and Conditions](https://www.qapital.com/terms/)
+- [Privacy Policy](https://www.qapital.com/terms/privacy-policy/)
+
+## Trust and security
+
+- [Security](https://www.qapital.com/security/): SOC 2 Type I examination completed; TLS 1.2+ in transit, AES-256 at rest; internal MFA and least-privilege; third-party penetration testing; FDIC insurance up to $250,000 through member partner banks.
+- Domain posture probed 2026-08-26: TLS 1.3, HSTS max-age 63072000, DNSSEC signed, CAA records present, SPF published, DMARC p=reject.
+- No /.well-known/security.txt (404), no published coordinated-disclosure policy, and no bug-bounty program. Security questions go to support@qapital.com.
+
+## Support
+
+- [Help Center](https://help.qapital.com/en/): Intercom-hosted articles for getting started, cards, invest, and account management.
+
+## Integrations
+
+- [Qapital on IFTTT](https://ifttt.com/qapital): Triggers — create or join a new goal; every time you save; every time you save using a specific method; every time you save toward a specific goal. Queries (IFTTT Pro+) — history of saves, history of saves by method, history of goals created or joined. Action — save toward a goal.
+
+## Optional
+
+- [API Evangelist](https://apievangelist.com/): Independent third-party profile and rating of Qapital's public API surface is maintained by API Evangelist.
