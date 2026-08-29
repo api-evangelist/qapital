@@ -14,6 +14,17 @@ description: >-
   offers is a Qapital service on IFTTT (four triggers, three queries, one action), and its own
   api.qapital.com host answers anonymous requests with HTTP 503.
 url: https://raw.githubusercontent.com/api-evangelist/qapital/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.qapital.com/images/qapital_share.png
 x-type: company
 x-source: harvest:secondary-market
