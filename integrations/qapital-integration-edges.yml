@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/qapital/integrations
+- https://n8n.io/integrations/qapital/
+- https://composio.dev/toolkits/qapital
+- https://monid.ai/tools/qapital
+checked:
+- https://composio.dev/toolkits/qapital
+- https://monid.ai/tools/qapital
+- https://n8n.io/integrations/qapital/
+- https://zapier.com/apps/qapital/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
