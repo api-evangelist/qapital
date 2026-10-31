@@ -64,46 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Qapital is a consumer personal-finance company founded in 2013 — "born in Stockholm, raised in New
-York City" — that packages saving, spending, investing and budgeting into a single mobile membership
-app built on behavioral-economics research. Its Rules engine automates transfers into user-defined
-Goals, a Dream Team feature lets two people save collaboratively, Qapital Invest offers risk-weighted
-portfolios through SEC-registered advisory and brokerage partners, and a Qapital Visa debit card and
-Spending account run on FDIC-member partner banking. Qapital reports 3.5m+ app downloads and roughly
-$3B collectively saved by members.
+Qapital is a consumer personal-finance company founded in 2013 — "born in Stockholm, raised in New York City" — that packages saving, spending, investing and budgeting into a single mobile membership app built on behavioral-economics research. Its Rules engine automates transfers into user-defined Goals (round-ups, guilty pleasure, payday divvy, freelancer tax set-aside and activity-triggered saves), a Dream Team feature lets two people save collaboratively, Qapital Invest offers risk-weighted portfolios through SEC-registered advisory and brokerage partners, and a Qapital Visa debit card and Spending account run on FDIC-member partner banking. The company reports 3.5m+ app downloads and roughly $3B collectively saved by members. Qapital sells a subscription — Basic, Complete and Premier tiers — rather than a developer product: it publishes no developer portal, no API reference and no machine-readable contract of any kind. The only public automation surface it offers is a Qapital service on IFTTT (four triggers, three queries, one action), and its own api.qapital.com host answers anonymous requests with HTTP 503.
 
-## API surface
+**Areas:** Company · Personal Finance · Savings · Banking · Investing · Budgeting · Fintech · Consumer Applications · Behavioral Economics · Mobile Banking
 
-**Qapital publishes no public API.** As of 2026-08-26 there is no developer portal, no API
-reference, no OpenAPI / AsyncAPI / GraphQL contract, no SDK, no CLI, no MCP server and no A2A agent
-card. `developer.qapital.com` and `docs.qapital.com` do not resolve; `api.qapital.com` resolves to an
-AWS load balancer but answers every anonymous request with `503 Service Unavailable` because it is
-the private backend for the mobile apps. Every `/.well-known/` path on `www.qapital.com` returns 404.
+## Qapital on APIs.io
 
-The only public programmable surface is the [Qapital service on IFTTT](https://ifttt.com/qapital) —
-four polling triggers, three Pro+ queries and one action — captured in
-[`integrations/qapital-ifttt.yml`](integrations/qapital-ifttt.yml).
+Everything profiled for Qapital is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/qapital/](https://apis.io/providers/qapital/)** — or go straight to one of the APIs or properties below.
 
-## What is in this profile
+### Published properties
 
-| Artifact | File |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Qapital Domain Security](https://apis.io/security/qapital/qapital-domain-security/)
+- [Qapital Trust Center](https://apis.io/security/qapital/qapital-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Qapital Plans Pricing](https://apis.io/plans/qapital/qapital-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Qapital Rate Limits](https://apis.io/rate-limits/qapital/qapital-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.qapital.com/)
+- [Pricing](https://www.qapital.com/pricing/)
+- [Sign up](https://www.qapital.com/download/)
+- [Support](https://help.qapital.com/en/)
+- [Blog](https://www.qapital.com/blog/)
+- [Compliance](https://www.qapital.com/security/)
+- [Terms of service](https://www.qapital.com/terms/)
+- [Privacy policy](https://www.qapital.com/terms/privacy-policy/)
+- [GitHub](https://github.com/qapital)
+
+## API Evangelist rating
+
+**Kin Score 27.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| Membership plans and pricing | [`plans/qapital-plans-pricing.yml`](plans/qapital-plans-pricing.yml) |
-| Rate limits (measured zero) | [`rate-limits/qapital-rate-limits.yml`](rate-limits/qapital-rate-limits.yml) |
-| `/.well-known/` probe (all 404 / 503) | [`well-known/qapital-well-known.yml`](well-known/qapital-well-known.yml) |
-| Trust center — SOC 2 Type I, FDIC, SEC/FINRA partners | [`security/qapital-trust-center.yml`](security/qapital-trust-center.yml) |
-| Domain security probe | [`security/qapital-domain-security.yml`](security/qapital-domain-security.yml) |
-| Conformance | [`conformance/qapital-conformance.yml`](conformance/qapital-conformance.yml) |
-| IFTTT integration surface | [`integrations/qapital-ifttt.yml`](integrations/qapital-ifttt.yml) |
-| llms.txt | [`llms/qapital-llms.txt`](llms/qapital-llms.txt) |
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 92.1 |
 
-## Links
+**Agent readiness 2.5** — human-only
 
-- Website — https://www.qapital.com/
-- Pricing — https://www.qapital.com/pricing/
-- Security — https://www.qapital.com/security/
-- Help Center — https://help.qapital.com/en/
-- Blog — https://www.qapital.com/blog/
-- GitHub — https://github.com/qapital
-- Terms — https://www.qapital.com/terms/
-- Privacy — https://www.qapital.com/terms/privacy-policy/
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.9** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/qapital/](https://apis.io/providers/qapital/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Qapital: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/qapital/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
